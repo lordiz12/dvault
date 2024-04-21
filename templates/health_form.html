@@ -1,0 +1,247 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- meta data -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+        <!--font-family-->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+              rel="stylesheet">
+    
+        <!-- title of site -->
+        <title>Health</title>
+    
+        <!-- For favicon png -->
+        <link rel="shortcut icon" type="image/icon" href="{% static 'assets/logo/favicon.png' %}" />
+    
+        <!--font-awesome.min.css-->
+        <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+    
+        <!--linear icon css-->
+        <link rel="stylesheet" href="{% static 'assets/css/linearicons.css' %}">
+    
+        <!--animate.css-->
+        <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    
+        <!--flaticon.css-->
+        <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+    
+        <!--slick.css-->
+        <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/slick-theme.css' %}">
+    
+        <!--bootstrap.min.css-->
+        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    
+        <!-- bootsnav -->
+        <link rel="stylesheet" href="{% static 'assets/css/bootsnav.css' %}">
+    
+        <!--style.css-->
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    
+        <!--responsive.css-->
+        <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+        <style>
+          body {
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: rgba(104, 102, 102, 0.8);
+          }
+          form {
+              max-width: 600px;
+              margin: 20px auto;
+              padding: 20px;
+              border: 1px solid #ccc;
+              border-radius: 8px;
+              background-color: aliceblue;
+          }
+          h2 {
+              text-align: center;
+          }
+          label {
+              font-weight: bold;
+          }
+          input[type="text"],
+          input[type="email"],
+          input[type="tel"],
+          textarea,
+          select {
+              width: 100%;
+              padding: 8px;
+              margin-bottom: 10px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              box-sizing: border-box;
+          }
+          input[type="submit"] {
+              background-color: #4CAF50;
+              color: white;
+              padding: 10px 20px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+          }
+          input[type="submit"]:hover {
+              background-color: #45a049;
+          }
+          #page-container {
+              transition: opacity 0.3s ease-in-out;
+          }
+      </style>
+  </head>
+  <body class="theme-red">
+    <section class="top-area">
+      <div class="header-area">
+          <!-- Start Navigation -->
+          <nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy" data-minus-value-desktop="70"
+               data-minus-value-mobile="55" data-speed="1000">
+  
+              <div class="container">
+  
+                  <!-- Start Header Navigation -->
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                          <i class="fa fa-bars"></i>
+                      </button>
+                      <a class="navbar-brand" href="home">Data<span>Vault</span></a>
+  
+                  </div><!--/.navbar-header-->
+                  <!-- End Header Navigation -->
+  
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                      <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a href="home">home</a></li>
+                        <li><a href="health">health</a></li>
+                        <li><a href="education">education</a></li>
+                        <li><a href="financial">financial</a></li>
+                        <li><a href="logout">logout</a></li>
+                      </ul><!--/.nav -->
+                  </div><!-- /.navbar-collapse -->
+              </div><!--/.container-->
+          </nav><!--/nav-->
+          <!-- End Navigation -->
+      </div><!--/.header-area-->
+      <div class="clearfix"></div>
+  
+  </section><!-- /.top-area-->
+  <!-- top-area End -->
+
+  
+
+    
+    <br></br><br>
+
+    <form action="healthformdata" method="post">
+      {% csrf_token %}
+      <h2>Health and Medical Details</h2>
+      <label for="name">FullName:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="dob">Age:</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+      </select><br><br>
+
+      <h3>Medical History:</h3><br>
+      <label for="conditions">Pre-existing Medical Conditions:</label>
+      <textarea id="conditions" name="conditions"></textarea>
+
+      <label for="allergies">Allergies:</label>
+      <textarea id="allergies" name="allergies"></textarea>
+
+      <label for="medications">Medications (current and past):</label>
+      <textarea id="medications" name="medications"></textarea>
+
+      <label for="surgeries">Surgeries or Medical Procedures Undergone:</label>
+      <textarea id="surgeries" name="surgeries"></textarea>
+
+      <label for="family_history">Family Medical History:</label>
+      <textarea id="family_history" name="family_history"></textarea><br>
+
+      <h3>Symptoms:</h3><br>
+      <label for="symptoms">Current Symptoms or Complaints:</label>
+      <textarea id="symptoms" name="symptoms"></textarea>
+
+      <label for="symptoms_duration">Duration of Symptoms:</label>
+      <input type="text" id="symptoms_duration" name="symptoms_duration">
+
+      <label for="symptoms_severity">Severity of Symptoms:</label>
+      <input type="text" id="symptoms_severity" name="symptoms_severity"><br>
+
+      <h3>Lifestyle:</h3><br>
+      <label>Diet:</label>
+      <textarea id="diet" name="diet"></textarea>
+
+      <label>Exercise Routine:</label>
+      <textarea id="exercise" name="exercise"></textarea>
+
+
+      <h3>Insurance Information:</h3><br>
+      <label for="insurance_provider">Insurance Provider:</label>
+      <input type="text" id="insurance_provider" name="insurance_provider">
+
+      <label for="policy_number">Policy Number:</label>
+      <input type="text" id="policy_number" name="policy_number"><br>
+
+      <h3>Emergency Contact:</h3><br>
+      <label for="emergency_name">Name:</label>
+      <input type="text" id="emergency_name" name="emergency_name">
+
+      <label for="emergency_relationship">Relationship:</label>
+      <input type="text" id="emergency_relationship" name="emergency_relationship">
+
+      <label for="emergency_phone">Phone Number:</label>
+      <input type="tel" id="emergency_phone" name="emergency_phone"> <br>
+
+
+      <h3>Additional Comments/Questions:</h3><br>
+      <textarea id="additional_comments" name="additional_comments"></textarea>
+
+      <input type="submit" value="Submit">
+  </form>
+  
+  <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+    
+  <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/owl-carousel/owl.carousel.min.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/perfect-scrollbar/js/perfect-scrollbar.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/isotope/isotope.pkgd.min.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/fancybox/js/jquery.fancybox.min.js' %}"></script>
+
+  <script src="{% static 'assets/vendor/wow/wow.min.js' %}"></script>
+
+  <script src="{% static 'assets/vendor/animateNumber/jquery.animateNumber.min.js' %}"></script>
+
+  <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+
+  <script src="{% static 'assets/js/google-maps.js' %}"></script>
+    
+  <script src="{% static 'assets/js/topbar-virtual.js' %}"></script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
+
+
+  
+</body>
+</html>

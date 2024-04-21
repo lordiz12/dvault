@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: rgba(104, 102, 102, 0.8);
+        }
+        .success-message {
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #page-container {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="page-container">
+    <div class="success-message">
+        <h2>Form Submitted Successfully!</h2>
+        <p>Thank you for submitting the form.</p>
+        <p>Go To Previous <a href="">Page</a></p>
+        <p>Go To <a href="home">home</a></p>
+    </div>
+    </div>
+    <script src="{% static 'assets/js/pagetrans.js' %}"></script>
+</body>
+</html>

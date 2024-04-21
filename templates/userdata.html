@@ -1,0 +1,334 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <meta name="copyright" content="MACode ID, https://www.macodeid.com/">
+  
+  <title>my_profile</title>
+
+  <link rel="shortcut icon" href="{% static 'assets/favicon.ico' %}" type="image/x-icon">
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/themify-icons.css' %}">
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.css' %}">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/animate/animate.css' %}">
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/owl-carousel/owl.carousel.css' %}">
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/perfect-scrollbar/css/perfect-scrollbar.css' %}">
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/nice-select/css/nice-select.css' %}">
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/fancybox/css/jquery.fancybox.min.css' %}">
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/virtual.css' %}">
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/topbar.virtual.css' %}">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgba(104, 102, 102, 0.8);
+      margin: 0;
+      padding: 0;
+    }
+
+    .containerr {
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-info {
+      margin-bottom: 20px;
+    }
+
+    .profile-info label {
+      font-weight: bold;
+    }
+
+    .profile-info p {
+      margin: 5px 0;
+    }
+
+    .profile-info p:last-child {
+      margin-bottom: 0;
+    }
+
+    .button-container {
+      text-align: center;
+    }
+
+    .edit-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .edit-button:hover {
+      background-color: #0056b3;
+    }
+     
+    /* styles.css */
+
+    #page-container {
+            transition: opacity 0.3s ease-in-out;
+    }
+    p {
+      color: rgb(132, 131, 131);
+    }
+
+  </style>
+
+  
+</head>
+<body class="theme-red">
+  
+
+  
+  
+    
+    <br></br><br>
+     
+  <div class="containerr">
+      <h1>User Profile</h1>
+      <div class="profile-info">
+        <label>Name:</label>
+        <p>{{ profiledata.first_name }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Email:</label>
+        <p>{{ profiledata.email }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Phone:</label>
+        <p>{{ profiledata.mobile }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Address:</label>
+        <p>{{ profiledata.address }}</p>
+      </div><br><br>
+      <!-- <div class="button-container">
+        <button class="edit-button">Edit Profile</button>
+      </div> -->
+      <h1>Health Record</h1>
+      <div class="profile-info">
+        <label>FullName:</label>
+        <p>{{ healthdata.FullName }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Date of Birth:</label>
+        <p>{{ healthdata.dob }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Age:</label>
+        <p>{{ healthdata.age }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Gender:</label>
+        <p>{{ healthdata.gender }}</p>
+        <div class="profile-info">
+          <label>Pre-existing Medical Conditions:</label>
+          <p>{{ healthdata.conditions }}</p>
+        </div>
+        <div class="profile-info">
+          <label>Allergies:</label>
+          <p>{{ healthdata.allergies }}</p>
+        </div>
+        <div class="profile-info">
+          <label>Medications:</label>
+          <p>{{ healthdata.medications }}</p>
+        </div>
+        <div class="profile-info">
+            <label>Surgeries or Medical Procedures Undergone:</label>
+            <p>{{ healthdata.surgeries }}</p>
+        </div>
+        <div class="profile-info">
+            <label>Family Medical History:</label>
+            <p>{{ healthdata.family_history }}</p>
+        </div>
+        <div class="profile-info">
+            <label>Current Symptoms:</label>
+            <p>{{ healthdata.symptoms }}</p>
+        </div>
+        <div class="profile-info">
+          <label>symptoms duration:</label>
+          <p>{{ healthdata.symptoms_duration }}</p>
+        </div>
+        <div class="profile-info">
+          <label>symptoms severity:</label>
+          <p>{{ healthdata.symptoms_severity }}</p>
+        </div>
+        <div class="profile-info">
+          <label>Diet:</label>
+          <p>{{ healthdata.diet }}</p>
+      </div>
+      <div class="profile-info">
+            <label>exercise routine:</label>
+            <p>{{ healthdata.exercise }}</p>
+      </div>
+
+      <div class="profile-info">
+          <label>Insurance provider:</label>
+          <p>{{ healthdata.insurance_provider }}</p>
+      </div>
+      <div class="profile-info">
+          <label>policy no.:</label>
+          <p>{{ healthdata.policy_number }}</p>
+      </div>
+      <div class="profile-info">
+          <label>Emergency contact name:</label>
+          <p>{{ healthdata.emergency_name }}</p>
+      </div>
+      <div class="profile-info">
+      <label>relationship:</label>
+      <p>{{ healthdata.emergency_relationship }}</p>
+      </div>
+      <div class="profile-info">
+      <label>phone:</label>
+      <p>{{ healthdata.emergency_phone }}</p>
+      </div>
+      <div class="profile-info">
+      <label>Additional Comments:</label>
+      <p>{{ healthdata.additional_comments }}</p>
+      </div><br><br>
+
+      <h1>Financial Details</h1>
+      <div class="profile-info">
+        <label>Income:</label>
+        <p>{{ financialdata.income }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Savinga:</label>
+        <p>{{ financialdata.savings }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Assets:</label>
+        <p>{{ financialdata.assets }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Debts:</label>
+        <p>{{ financialdata.debts }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Monthly Expenses:</label>
+        <p>{{ financialdata.expenses }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Credit Score:</label>
+        <p>{{ financialdata.credit_score }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Aadhar no:</label>
+        <p>{{ financialdata.aadhar_no }}</p>
+      </div>
+      <div class="profile-info">
+        <label>PAN no:</label>
+        <p>{{ financialdata.pan_no }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Bank Account no:</label>
+        <p>{{ financialdata.bank_account_no }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Credit Card no:</label>
+        <p>{{ financialdata.credit_card_no }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Additional info:</label>
+        <p>{{ financialdata.additional_info }}</p>
+      </div><br><br>
+
+      <h1>Educational Details</h1>
+      <div class="profile-info">
+        <label>Highest Degree in:</label>
+        <p>{{ educationaldata.degree }}</p>
+      </div>
+      <div class="profile-info">
+        <label>University/Institution Name:</label>
+        <p>{{ educationaldata.university }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Major/Field of Study:</label>
+        <p>{{ educationaldata.major }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Year of Graduation:</label>
+        <p>{{ educationaldata.graduation_year }}</p>
+      </div>
+      <div class="profile-info">
+        <label>GPA:</label>
+        <p>{{ educationaldata.gpa }}</p>
+      </div>
+      <div class="profile-info">
+        <label>12th marks percentage:</label>
+        <p>{{ educationaldata.twelth_marks_percentage }}</p>
+      </div>
+      <div class="profile-info">
+        <label>10th marks percentage:</label>
+        <p>{{ educationaldata.tenth_marks_percentage }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Certifications:</label>
+        <p>{{ educationaldata.certifications }}</p>
+      </div>
+      <div class="profile-info">
+        <label>Additional Information:</label>
+        <p>{{ educationaldata.additional_info }}</p>
+      </div>
+
+
+  </div>
+
+
+     
+   
+  
+  <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+    
+  <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/owl-carousel/owl.carousel.min.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/perfect-scrollbar/js/perfect-scrollbar.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/isotope/isotope.pkgd.min.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/fancybox/js/jquery.fancybox.min.js' %}"></script>
+
+  <script src="{% static 'assets/vendor/wow/wow.min.js' %}"></script>
+
+  <script src="{% static 'assets/vendor/animateNumber/jquery.animateNumber.min.js' %}"></script>
+
+  <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+
+  <script src="{% static 'assets/js/google-maps.js' %}"></script>
+    
+  <script src="{% static 'assets/js/topbar-virtual.js' %}"></script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
+
+
+  
+</body>
+</html>

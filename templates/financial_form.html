@@ -1,0 +1,209 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+      <!-- meta data -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  
+      <!--font-family-->
+      <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+  
+      <!-- title of site -->
+      <title>financial</title>
+  
+      <!-- For favicon png -->
+      <link rel="shortcut icon" type="image/icon" href="{% static 'assets/logo/favicon.png' %}" />
+  
+      <!--font-awesome.min.css-->
+      <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+  
+      <!--linear icon css-->
+      <link rel="stylesheet" href="{% static 'assets/css/linearicons.css' %}">
+  
+      <!--animate.css-->
+      <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+  
+      <!--flaticon.css-->
+      <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+  
+      <!--slick.css-->
+      <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+      <link rel="stylesheet" href="{% static 'assets/css/slick-theme.css' %}">
+  
+      <!--bootstrap.min.css-->
+      <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+  
+      <!-- bootsnav -->
+      <link rel="stylesheet" href="{% static 'assets/css/bootsnav.css' %}">
+  
+      <!--style.css-->
+      <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  
+      <!--responsive.css-->
+      <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+      <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(104, 102, 102, 0.8);
+        }
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: aliceblue;
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #page-container {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="theme-red">
+  <section class="top-area">
+    <div class="header-area">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy" data-minus-value-desktop="70"
+             data-minus-value-mobile="55" data-speed="1000">
+
+            <div class="container">
+
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="home">Data<span>Vault</span></a>
+
+                </div><!--/.navbar-header-->
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a href="home">home</a></li>
+                        <li><a href="health">health</a></li>
+                        <li><a href="education">education</a></li>
+                        <li><a href="financial">financial</a></li>
+                        <li><a href="logout">logout</a></li>
+                    </ul><!--/.nav -->
+                </div><!-- /.navbar-collapse -->
+            </div><!--/.container-->
+        </nav><!--/nav-->
+        <!-- End Navigation -->
+    </div><!--/.header-area-->
+    <div class="clearfix"></div>
+
+</section><!-- /.top-area-->
+<!-- top-area End -->
+  
+    
+    <br></br><br>
+    <form action="financialformdata" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h2>Financial Details</h2>
+      <label for="income">Annual Income:</label>
+      <input type="text" id="income" name="income" required>
+
+      <label for="savings">Savings Amount:</label>
+      <input type="text" id="savings" name="savings" required>
+
+      <label for="assets">Total Assets:</label>
+      <input type="text" id="assets" name="assets" required>
+
+      <label for="debts">Total Debts:</label>
+      <input type="text" id="debts" name="debts" required>
+
+      <label for="expenses">Monthly Expenses:</label>
+      <input type="text" id="expenses" name="expenses" required>
+
+      <label for="credit_score">Credit Score:</label>
+      <input type="text" id="credit_score" name="credit_score">
+
+      <label for="aadhar_no">Aadhar No:</label>
+      <input type="text" id="aadhar_no" name="aadhar_no">
+
+      <label for="pan_no">PAN No:</label>
+      <input type="text" id="pan_no" name="pan_no">
+
+      <label for="bank_account">Bank Account Number:</label>
+      <input type="text" id="bank_account" name="bank_account" required>
+
+      <label for="credit_card">Credit Card Number:</label>
+      <input type="text" id="credit_card" name="credit_card" required>
+
+      <label for="additional_info">Additional Information:</label>
+      <textarea id="additional_info" name="additional_info"></textarea>
+
+      <input type="submit" value="Submit">
+  </form>
+   
+  
+  <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+    
+  <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/owl-carousel/owl.carousel.min.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/perfect-scrollbar/js/perfect-scrollbar.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/isotope/isotope.pkgd.min.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    
+  <script src="{% static 'assets/vendor/fancybox/js/jquery.fancybox.min.js' %}"></script>
+
+  <script src="{% static 'assets/vendor/wow/wow.min.js' %}"></script>
+
+  <script src="{% static 'assets/vendor/animateNumber/jquery.animateNumber.min.js' %}"></script>
+
+  <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+
+  <script src="{% static 'assets/js/google-maps.js' %}"></script>
+    
+  <script src="{% static 'assets/js/topbar-virtual.js' %}"></script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
+
+
+  
+</body>
+</html>
